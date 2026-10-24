@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Happy Birthday, Indhu! 🌸 Chapter 21</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- LightGallery for high-res photo zoom -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />
+
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Google Fonts: Mochiy Pop One & Poppins & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Meta & Social Sharing -->
+  <meta name="description" content="A special birthday celebration website for Indhu. Happy 21st Birthday!">
+  <meta property="og:title" content="Happy Birthday, Indhu! 🌸">
+  <meta property="og:description" content="To the real gem who turns everyday moments into a warm manga chapter.">
+  <meta property="og:image" content="img/0.jpg">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-pink-300 selection:text-pink-900">
+
+  <!-- Falling Sakura Petals Background Canvas -->
+  <canvas id="sakura-canvas" aria-hidden="true"></canvas>
+
+  <!-- Floating Audio & Love Controls -->
+  <aside class="fixed bottom-5 right-4 sm:right-6 z-50 flex flex-col items-center gap-3" aria-label="Quick Controls">
+    <!-- Floating Love Reaction Button -->
+    <button id="floating-love-btn" class="floating-widget-btn bg-white/90 text-rose-500 border border-pink-200 hover:bg-rose-500 hover:text-white" title="Send Birthday Love! 💖" aria-label="Send Birthday Love">
+      <i class="fa-solid fa-heart text-xl animate-pulse"></i>
+    </button>
+
+    <!-- Floating Lo-Fi Music Player Button -->
+    <button id="music-toggle-btn" class="floating-widget-btn bg-pink-500 text-white border-2 border-white/80" title="Play / Pause Birthday Lo-Fi Melody" aria-label="Toggle Lo-Fi Music">
+      <i id="music-icon" class="fa-solid fa-music text-xl"></i>
+    </button>
+  </aside>
+
+  <!-- Navigation Bar (Glassmorphic) -->
+  <header class="fixed top-0 left-0 right-0 z-40 px-3 sm:px-6 py-2.5 sm:py-3.5 transition-all">
+    <nav class="max-w-6xl mx-auto glass-panel rounded-full px-4 sm:px-6 py-2 flex items-center justify-between shadow-sm">
+      <a href="#hero" class="flex items-center gap-2 group">
+        <span class="text-xl sm:text-2xl animate-spin-slow">🌸</span>
+        <span class="font-anime text-sm sm:text-base text-pink-600 tracking-wide font-bold">Indhu's 21st</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-xs sm:text-sm font-medium text-slate-600">
+        <a href="#special-letter" class="hover:text-pink-600 transition-colors">Letter</a>
+        <a href="#story-arc" class="hover:text-pink-600 transition-colors">Story Arc</a>
+        <a href="#hall-of-fame" class="hover:text-pink-600 transition-colors">Hall of Fame</a>
+        <a href="#gallery" class="hover:text-pink-600 transition-colors">Memories</a>
+      </div>
+
+      <a href="#birthday-cake" class="inline-flex items-center gap-1.5 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xs sm:text-sm font-semibold px-3 sm:px-4 py-1.5 rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all">
+        <i class="fa-solid fa-cake-candles"></i>
+        <span>Make A Wish</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ==========================================
+       SECTION 1: HERO WELCOME (VIDEO BACKGROUND)
+       ========================================== -->
+  <section id="hero" class="min-h-[100svh] relative flex items-center justify-center text-white overflow-hidden px-4 pt-16">
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+      <source src="img/v2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Cinematic Vignette & Gradient Overlays -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-slate-950/85 z-1"></div>
+
+    <div class="text-center z-10 max-w-4xl mx-auto py-12 px-2" data-aos="zoom-in" data-aos-duration="1100">
+      <!-- Chapter Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-pink-200 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-5">
+        <span class="w-2 h-2 rounded-full bg-pink-400 animate-ping"></span>
+        <span>Chapter 21 • October 24</span>
+      </div>
+
+      <!-- Main Birthday Headline -->
+      <h1 class="hero-title text-4xl sm:text-6xl md:text-7xl font-anime text-white drop-shadow-2xl glow-sakura tracking-tight">
+        Happy Birthday, <span class="text-gradient-sakura">Indhu!</span>
+      </h1>
+
+      <p class="hero-subtitle mt-3 sm:mt-5 text-base sm:text-xl md:text-2xl font-light text-pink-100 max-w-2xl mx-auto leading-relaxed drop-shadow">
+        To the real gem who turns everyday moments into a warm manga chapter ✨
+      </p>
+
+      <!-- Glassmorphic Live Age & Time Counter -->
+      <div class="mt-8 sm:mt-10">
+        <p class="text-xs sm:text-sm uppercase tracking-widest text-pink-200/80 mb-3 font-semibold">
+          ✨ Time Spent Making The World Brighter ✨
+        </p>
+
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3 max-w-xl mx-auto justify-center">
+          <!-- Years -->
+          <div class="countdown-card">
+            <span id="val-years" class="block text-xl sm:text-3xl font-anime text-pink-300 font-bold">21</span>
+            <span class="text-[10px] sm:text-xs text-slate-300 font-medium tracking-wider uppercase">Years</span>
+          </div>
+          <!-- Months -->
+          <div class="countdown-card">
+            <span id="val-months" class="block text-xl sm:text-3xl font-anime text-pink-300 font-bold">0</span>
+            <span class="text-[10px] sm:text-xs text-slate-300 font-medium tracking-wider uppercase">Months</span>
+          </div>
+          <!-- Days -->
+          <div class="countdown-card">
+            <span id="val-days" class="block text-xl sm:text-3xl font-anime text-pink-300 font-bold">0</span>
+            <span class="text-[10px] sm:text-xs text-slate-300 font-medium tracking-wider uppercase">Days</span>
+          </div>
+          <!-- Hours -->
+          <div class="countdown-card">
+            <span id="val-hours" class="block text-xl sm:text-3xl font-anime text-pink-300 font-bold">00</span>
+            <span class="text-[10px] sm:text-xs text-slate-300 font-medium tracking-wider uppercase">Hours</span>
+          </div>
+          <!-- Minutes -->
+          <div class="countdown-card">
+            <span id="val-minutes" class="block text-xl sm:text-3xl font-anime text-pink-300 font-bold">00</span>
+            <span class="text-[10px] sm:text-xs text-slate-300 font-medium tracking-wider uppercase">Mins</span>
+          </div>
+          <!-- Seconds -->
+          <div class="countdown-card">
+            <span id="val-seconds" class="block text-xl sm:text-3xl font-anime text-pink-300 font-bold">00</span>
+            <span class="text-[10px] sm:text-xs text-slate-300 font-medium tracking-wider uppercase">Secs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Call-To-Action Buttons -->
+      <div class="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-3.5 sm:gap-4">
+        <a href="#special-letter" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg shadow-pink-500/30 transition-all hover:scale-105">
+          <i class="fa-solid fa-envelope-open-text"></i>
+          <span>Read Her Letter</span>
+        </a>
+
+        <button id="hero-music-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/30 text-white font-medium px-5 py-3 rounded-full transition-all hover:scale-105">
+          <i class="fa-solid fa-compact-disc text-pink-300"></i>
+          <span id="music-status-text">Play Lo-Fi Music</span>
+        </button>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#special-letter" class="inline-block mt-8 text-white/60 hover:text-white transition-colors animate-bounce" aria-label="Scroll Down">
+        <i class="fa-solid fa-chevron-down text-lg"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- MAIN CONTAINER -->
+  <main class="container mx-auto px-4 sm:px-6 md:px-12 py-12 space-y-20 sm:space-y-28">
+
+    <!-- ==========================================
+         SECTION 2: A SPECIAL MESSAGE FOR YOU
+         ========================================== -->
+    <section id="special-letter" class="max-w-3xl mx-auto pt-6" data-aos="fade-up">
+      <div class="text-center mb-8">
+        <span class="text-xs sm:text-sm font-semibold text-pink-600 tracking-widest uppercase bg-pink-100/70 px-3 py-1 rounded-full">
+          From The Heart
+        </span>
+        <h2 class="section-heading text-3xl sm:text-4xl md:text-5xl font-anime text-slate-800 mt-3 drop-shadow-sm">
+          A Special Message For You 💌
+        </h2>
+      </div>
+
+      <!-- Wax-Sealed Letter Card -->
+      <article class="letter-frame p-6 sm:p-10 md:p-12 relative overflow-hidden">
+        <!-- Top Letter Header with Postal Stamp & Wax Seal -->
+        <div class="flex items-center justify-between border-b border-pink-100 pb-5 mb-6">
+          <div class="flex items-center gap-3">
+            <div class="wax-seal" title="Authentic Wax Seal">
+              <span>🌸</span>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Special Delivery</p>
+              <h3 class="font-anime text-sm sm:text-base text-pink-600">To: Indhu • October 24</h3>
+            </div>
+          </div>
+          <div class="text-right hidden sm:block">
+            <span class="inline-block border border-pink-300 bg-pink-50 text-pink-600 text-[10px] font-bold px-2 py-1 rounded tracking-widest uppercase">
+              First Class Memory
+            </span>
+          </div>
+        </div>
+
+        <!-- Heartfelt Letter Content -->
+        <div class="text-base sm:text-lg text-slate-700 leading-relaxed sm:leading-loose space-y-4">
+          <p class="font-medium text-pink-700 text-lg sm:text-xl font-anime">
+            Hey Indhu,
+          </p>
+
+          <p>
+            Wish you a very <strong class="text-pink-600 font-semibold">Happy Birthday Indhu!</strong> May god fulfil all your wishes, may you have an endless supply of happy days, and may all your dreams turn into reality—a peaceful life surrounded with adorable pets and moments as colorful as a heartwarming manga.
+          </p>
+
+          <p>
+            Thank you for always being so kind and the genuine reason behind everyone's smile. Always connected to your roots, a true and loyal friend to everyone, you always stay yourself and that effortless, authentic vibe is your superpower.
+          </p>
+
+          <p class="italic text-slate-800 font-medium bg-pink-50/60 p-4 rounded-xl border-l-4 border-pink-400">
+            "We all are very lucky. We are not in the city of gems, yet still we found a real gem in you." ✨
+          </p>
+
+          <div class="pt-6 border-t border-pink-100 text-right">
+            <p class="text-slate-500 text-sm font-medium">With warm wishes & smiles,</p>
+            <p class="font-anime text-pink-600 text-lg sm:text-xl mt-1">Always In Your Corner 🌸</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: THE STORY ARC (TIMELINE)
+         Mobile-First Responsive Layout
+         ========================================== -->
+    <section id="story-arc" class="pt-6">
+      <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+        <span class="text-xs sm:text-sm font-semibold text-pink-600 tracking-widest uppercase bg-pink-100/70 px-3 py-1 rounded-full">
+          The Journey So Far
+        </span>
+        <h2 class="section-heading text-3xl sm:text-4xl md:text-5xl font-anime text-slate-800 mt-3">
+          Your Story Arc 📖
+        </h2>
+        <p class="text-sm sm:text-base text-slate-500 mt-2 max-w-lg mx-auto">
+          Every chapter with you is a memory worth treasuring forever.
+        </p>
+      </div>
+
+      <div class="timeline-container max-w-5xl mx-auto space-y-12 sm:space-y-16">
+
+        <!-- Timeline Item 1: Chapter 1 -->
+        <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-10" data-aos="fade-up">
+          <!-- Responsive Polaroid Image Container -->
+          <div class="w-full md:w-1/2">
+            <div class="polaroid-card -rotate-1 hover:rotate-0 transition-transform">
+              <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-100">
+                <img src="img/0.jpg" alt="Our very first meeting and journey" loading="lazy" class="w-full h-full object-cover">
+              </div>
+              <div class="pt-3 px-2 flex items-center justify-between text-xs text-slate-400 font-medium">
+                <span>📍 First Journey</span>
+                <span>Chapter 01</span>
+              </div>
+            </div>
+          </div>
+          <!-- Story Content -->
+          <div class="w-full md:w-1/2 text-center md:text-left">
+            <span class="inline-block bg-pink-100 text-pink-700 font-bold text-xs px-2.5 py-1 rounded-md mb-2">
+              PROLOGUE
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-anime text-pink-600 mb-3">Our First Meeting</h3>
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+              Our very first trip together. Between the quiet conversations, comfortable silences, and scenic views, this was the moment I realized even the simplest journeys feel extraordinary with you.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2: Chapter 2 -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-6 sm:gap-10" data-aos="fade-up">
+          <!-- Responsive Polaroid Image Container -->
+          <div class="w-full md:w-1/2">
+            <div class="polaroid-card rotate-1 hover:rotate-0 transition-transform">
+              <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-100">
+                <img src="img/13.jpg" alt="Where being with you started to feel like home" loading="lazy" class="w-full h-full object-cover">
+              </div>
+              <div class="pt-3 px-2 flex items-center justify-between text-xs text-slate-400 font-medium">
+                <span>📍 The Breakthrough</span>
+                <span>Chapter 02</span>
+              </div>
+            </div>
+          </div>
+          <!-- Story Content -->
+          <div class="w-full md:w-1/2 text-center md:text-right">
+            <span class="inline-block bg-pink-100 text-pink-700 font-bold text-xs px-2.5 py-1 rounded-md mb-2">
+              CHAPTER II
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-anime text-pink-600 mb-3">Where Home Began</h3>
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+              Do you remember this moment? That day, all the initial awkwardness and hesitation just completely melted away. Looking back at this photo, I don’t just see a destination—I see the moment being with you started to feel completely like home.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3: Chapter 3 -->
+        <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-10" data-aos="fade-up">
+          <!-- Responsive Polaroid Image Container -->
+          <div class="w-full md:w-1/2">
+            <div class="polaroid-card -rotate-1 hover:rotate-0 transition-transform">
+              <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-100">
+                <img src="img/19.jpg" alt="Finding peace and silence together" loading="lazy" class="w-full h-full object-cover">
+              </div>
+              <div class="pt-3 px-2 flex items-center justify-between text-xs text-slate-400 font-medium">
+                <span>📍 Safe Space</span>
+                <span>Chapter 03</span>
+              </div>
+            </div>
+          </div>
+          <!-- Story Content -->
+          <div class="w-full md:w-1/2 text-center md:text-left">
+            <span class="inline-block bg-pink-100 text-pink-700 font-bold text-xs px-2.5 py-1 rounded-md mb-2">
+              CHAPTER III
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-anime text-pink-600 mb-3">Peace in the Chaos</h3>
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+              They say finding someone who truly gets your silence is rare. In this moment, in the middle of college noise and everyday chaos, I found complete peace right next to you. Thank you for always being my safe space.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4: Chapter 4 -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-6 sm:gap-10" data-aos="fade-up">
+          <!-- Responsive Polaroid Image Container -->
+          <div class="w-full md:w-1/2">
+            <div class="polaroid-card rotate-1 hover:rotate-0 transition-transform">
+              <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-100">
+                <img src="img/25.jpg" alt="The temple blessing and birthday moment" loading="lazy" class="w-full h-full object-cover">
+              </div>
+              <div class="pt-3 px-2 flex items-center justify-between text-xs text-slate-400 font-medium">
+                <span>📍 Sacred Blessings</span>
+                <span>Chapter 04</span>
+              </div>
+            </div>
+          </div>
+          <!-- Story Content -->
+          <div class="w-full md:w-1/2 text-center md:text-right">
+            <span class="inline-block bg-pink-100 text-pink-700 font-bold text-xs px-2.5 py-1 rounded-md mb-2">
+              CHAPTER IV
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-anime text-pink-600 mb-3">The Temple Blessing</h3>
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+              The Temple Date. Going there together on my birthday felt different. Surrounded by the quiet bells and peaceful vibes, I wasn't just wishing for another good year—standing next to you, I realized you were already the best blessing I could ask for.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: HALL OF FAME (CAROUSEL)
+         Standardized Image Aspect Ratio & Touch-Friendly
+         ========================================== -->
+    <section id="hall-of-fame" class="pt-6">
+      <div class="text-center mb-8 sm:mb-12" data-aos="fade-up">
+        <span class="text-xs sm:text-sm font-semibold text-pink-600 tracking-widest uppercase bg-pink-100/70 px-3 py-1 rounded-full">
+          City & Travel Chronicles
+        </span>
+        <h2 class="section-heading text-3xl sm:text-4xl md:text-5xl font-anime text-slate-800 mt-3">
+          Hall of Fame 🏆
+        </h2>
+        <p class="text-sm sm:text-base text-slate-500 mt-2">
+          Swipe or scroll through our most iconic travel spots and memories.
+        </p>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto">
+        <!-- Scroll Buttons (Desktop & Tablet) -->
+        <button id="scroll-left-btn" class="absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white text-pink-600 border border-pink-200 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg transition-all hover:scale-110 active:scale-95" aria-label="Scroll Left">
+          <i class="fa-solid fa-chevron-left text-sm sm:text-base"></i>
+        </button>
+        <button id="scroll-right-btn" class="absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white text-pink-600 border border-pink-200 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg transition-all hover:scale-110 active:scale-95" aria-label="Scroll Right">
+          <i class="fa-solid fa-chevron-right text-sm sm:text-base"></i>
+        </button>
+
+        <!-- Horizontal Scrollable Container -->
+        <div id="hall-of-fame-scroller" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide py-4 px-2 sm:px-4 gap-4 sm:gap-6">
+
+          <!-- Card 1: Chennai -->
+          <div class="hall-card snap-center">
+            <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-md hover:shadow-xl transition-all border border-slate-100 flex flex-col h-full">
+              <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="img/31.jpg" alt="Chennai seaside memories" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="mt-auto">
+                <div class="flex items-center gap-1.5 text-xs text-pink-600 font-semibold mb-1">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Chennai</span>
+                </div>
+                <h3 class="text-xl font-anime text-slate-800">Marina Whispers</h3>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Coastal breezes, golden shorelines, and shared laughter.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Classroom -->
+          <div class="hall-card snap-center">
+            <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-md hover:shadow-xl transition-all border border-slate-100 flex flex-col h-full">
+              <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="img/21.jpg" alt="Classroom daily laughs" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="mt-auto">
+                <div class="flex items-center gap-1.5 text-xs text-pink-600 font-semibold mb-1">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                  <span>Classroom</span>
+                </div>
+                <h3 class="text-xl font-anime text-slate-800">Daily Sparkles</h3>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Making monotonous lectures memorable with whispered jokes.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Temple -->
+          <div class="hall-card snap-center">
+            <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-md hover:shadow-xl transition-all border border-slate-100 flex flex-col h-full">
+              <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="img/24.jpg" alt="Temple tranquility" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="mt-auto">
+                <div class="flex items-center gap-1.5 text-xs text-pink-600 font-semibold mb-1">
+                  <i class="fa-solid fa-om"></i>
+                  <span>Temple</span>
+                </div>
+                <h3 class="text-xl font-anime text-slate-800">Sacred Serenity</h3>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Peaceful chimes, quiet steps, and heartfelt blessings.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Vagamon -->
+          <div class="hall-card snap-center">
+            <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-md hover:shadow-xl transition-all border border-slate-100 flex flex-col h-full">
+              <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="img/26.jpg" alt="Vagamon hills" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="mt-auto">
+                <div class="flex items-center gap-1.5 text-xs text-pink-600 font-semibold mb-1">
+                  <i class="fa-solid fa-mountain"></i>
+                  <span>Vagamon</span>
+                </div>
+                <h3 class="text-xl font-anime text-slate-800">Misty Horizons</h3>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Pine forests, cool mountain mist, and endless winding roads.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Kanthaloor -->
+          <div class="hall-card snap-center">
+            <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-md hover:shadow-xl transition-all border border-slate-100 flex flex-col h-full">
+              <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="img/39.jpg" alt="Kanthaloor fruit farms" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="mt-auto">
+                <div class="flex items-center gap-1.5 text-xs text-pink-600 font-semibold mb-1">
+                  <i class="fa-solid fa-tree"></i>
+                  <span>Kanthaloor</span>
+                </div>
+                <h3 class="text-xl font-anime text-slate-800">Orchard Green</h3>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Fresh mountain fruits, green canopies, and pure peace.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Bengaluru -->
+          <div class="hall-card snap-center">
+            <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-md hover:shadow-xl transition-all border border-slate-100 flex flex-col h-full">
+              <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100 mb-4">
+                <img src="img/47.jpg" alt="Bengaluru city lights" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="mt-auto">
+                <div class="flex items-center gap-1.5 text-xs text-pink-600 font-semibold mb-1">
+                  <i class="fa-solid fa-city"></i>
+                  <span>Bengaluru</span>
+                </div>
+                <h3 class="text-xl font-anime text-slate-800">City Glow</h3>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Lively streets, cafe stops, and unforgettable city vibes.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: THE GALLERY (THE Y.V.A. COLLECTION)
+         Uniform Aspect Ratios & LightGallery Integration
+         ========================================== -->
+    <section id="gallery" class="pt-6">
+      <div class="text-center mb-10 sm:mb-14" data-aos="fade-up">
+        <span class="text-xs sm:text-sm font-semibold text-pink-600 tracking-widest uppercase bg-pink-100/70 px-3 py-1 rounded-full">
+          Photo Vault
+        </span>
+        <h2 class="section-heading text-3xl sm:text-4xl md:text-5xl font-anime text-slate-800 mt-3">
+          The Y.V.A. Collection 📸
+        </h2>
+        <p class="text-sm sm:text-base text-slate-500 mt-1">
+          (Your Very-own Adventures • Tap any image to expand)
+        </p>
+      </div>
+
+      <!-- Gallery Grid: Responsive 2-col on mobile, 3-col on sm, 4-col on md, 6-col on lg -->
+      <div id="lightgallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 max-w-6xl mx-auto">
+
+        <!-- Photo 1 -->
+        <a href="img/22.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/22.jpg" alt="Memory 1" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+        <!-- Photo 2 -->
+        <a href="img/28.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/28.jpg" alt="Memory 2" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+        <!-- Photo 3 -->
+        <a href="img/32.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/32.jpg" alt="Memory 3" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+        <!-- Photo 4 -->
+        <a href="img/30.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/30.jpg" alt="Memory 4" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+        <!-- Photo 5 -->
+        <a href="img/35.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/35.jpg" alt="Memory 5" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+        <!-- Photo 6 -->
+        <a href="img/36.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/36.jpg" alt="Memory 6" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+        <!-- Photo 7 -->
+        <a href="img/37.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/37.jpg" alt="Memory 7" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+        <!-- Photo 8 -->
+        <a href="img/14.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/14.jpg" alt="Memory 8" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+        <!-- Photo 9 -->
+        <a href="img/44.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/44.jpg" alt="Memory 9" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+        <!-- Photo 10 -->
+        <a href="img/45.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/45.jpg" alt="Memory 10" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+        <!-- Photo 11 -->
+        <a href="img/46.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/46.jpg" alt="Memory 11" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+        <!-- Photo 12 -->
+        <a href="img/47.jpg" data-sub-html="<h4>Adventure Memory</h4>" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/47.jpg" alt="Memory 12" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 sm:p-3 text-white text-xs font-semibold">
+            <span>🌸 View Photo</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Expandable Extra Photos Section (Seamlessly Loaded) -->
+      <div id="extra-photos" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 max-w-6xl mx-auto mt-3 sm:mt-4">
+        <a href="img/1.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/1.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+        <a href="img/2.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/2.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+        <a href="img/3.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/3.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+        <a href="img/4.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/4.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+        <a href="img/5.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/5.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+        <a href="img/6.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/6.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+        <a href="img/7.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/7.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+        <a href="img/8.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/8.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+        <a href="img/9.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/9.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+        <a href="img/10.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/10.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+        <a href="img/11.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/11.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+        <a href="img/12.jpg" class="gallery-item aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-xl group relative cursor-pointer border-2 border-white bg-slate-100 block">
+          <img src="img/12.jpg" alt="Memory Extra" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </a>
+      </div>
+
+      <!-- Toggle Button -->
+      <div class="text-center mt-8">
+        <button id="toggle-more-photos" class="inline-flex items-center gap-2 bg-white hover:bg-pink-50 text-pink-600 font-semibold px-6 py-2.5 rounded-full border border-pink-200 shadow-sm transition-all hover:scale-105">
+          <span>Explore All Memories (40+ Photos)</span>
+          <i class="fa-solid fa-chevron-down text-xs"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: THE BIRTHDAY FINALE & INTERACTIVE CAKE
+         Interactive Candles • Confetti • Video Reel • Wishes Wall
+         ========================================== -->
+    <section id="birthday-cake" class="pt-6" data-aos="fade-up">
+      <div class="text-center mb-8 sm:mb-12">
+        <span class="text-xs sm:text-sm font-semibold text-pink-600 tracking-widest uppercase bg-pink-100/70 px-3 py-1 rounded-full">
+          The Grand Celebration
+        </span>
+        <h2 class="section-heading text-3xl sm:text-4xl md:text-5xl font-anime text-slate-800 mt-3">
+          Make A Wish, Indhu! 🎂
+        </h2>
+        <p class="text-sm sm:text-base text-slate-500 mt-2 max-w-md mx-auto">
+          Tap on each candle flame to extinguish it, or press the button to blow them all at once!
+        </p>
+      </div>
+
+      <!-- Interactive Birthday Cake Container -->
+      <div class="bg-gradient-to-b from-white to-pink-50/50 p-6 sm:p-12 rounded-3xl border border-pink-100 shadow-xl max-w-3xl mx-auto text-center relative overflow-hidden">
+
+        <div class="cake-wrapper">
+          <!-- 3 Candles -->
+          <div class="candles-row">
+            <!-- Candle 1 -->
+            <div class="candle">
+              <div class="flame" title="Tap to blow out candle"></div>
+              <div class="smoke"></div>
+            </div>
+            <!-- Candle 2 -->
+            <div class="candle">
+              <div class="flame" title="Tap to blow out candle"></div>
+              <div class="smoke"></div>
+            </div>
+            <!-- Candle 3 -->
+            <div class="candle">
+              <div class="flame" title="Tap to blow out candle"></div>
+              <div class="smoke"></div>
+            </div>
+          </div>
+
+          <!-- Cake Tiers -->
+          <div class="cake-tier cake-top"></div>
+          <div class="cake-tier cake-middle"></div>
+          <div class="cake-tier cake-base"></div>
+          <div class="cake-plate"></div>
+        </div>
+
+        <div class="mt-8">
+          <button id="blow-candles-btn" class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 hover:from-pink-600 hover:to-rose-700 text-white font-semibold text-base sm:text-lg px-8 py-3.5 rounded-full shadow-lg shadow-pink-500/25 transition-all hover:scale-105 active:scale-95">
+            <i class="fa-solid fa-wind"></i>
+            <span>Blow Candles & Celebrate! 🎊</span>
+          </button>
+          <p class="text-xs text-slate-400 mt-3">
+            Tip: You can also tap individual candle flames to blow them out one by one!
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Video Reel Spotlight -->
+      <div class="max-w-3xl mx-auto mt-14 bg-slate-900 p-3 sm:p-5 rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-800">
+        <div class="flex items-center justify-between text-white px-2 py-1 mb-3">
+          <div class="flex items-center gap-2 text-xs sm:text-sm font-anime text-pink-300">
+            <i class="fa-solid fa-film"></i>
+            <span>Memory Reel • Indhu's Special Moments</span>
+          </div>
+          <span class="text-[10px] bg-pink-500/30 text-pink-300 px-2 py-0.5 rounded border border-pink-400/30">HD Video</span>
+        </div>
+        <div class="aspect-video w-full rounded-xl overflow-hidden bg-black relative">
+          <video id="spotlight-video" controls playsinline class="w-full h-full object-cover">
+            <source src="img/special_video.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+        </div>
+      </div>
+
+
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       CELEBRATION WISH MODAL
+       ========================================== -->
+  <div id="wish-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-10 max-w-md w-full text-center shadow-2xl border-4 border-pink-200 animate-in fade-in zoom-in duration-300 relative">
+      <div class="w-16 h-16 rounded-full bg-pink-100 text-pink-600 text-3xl flex items-center justify-center mx-auto mb-4 animate-bounce">
+        🎂
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-anime text-pink-600 mb-2">
+        Wish Granted! ✨
+      </h3>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+        Happy 21st Birthday, Indhu! May this year bring you boundless happiness, heartwarming adventures, unshakeable peace, and all the furry pets your heart can hold! 🌸🐾
+      </p>
+      <button id="close-wish-modal" class="w-full bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold py-3 rounded-full shadow-md hover:scale-105 transition-all">
+        Thank You! 💖
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="bg-slate-900 text-white pt-12 pb-16 px-4 text-center border-t border-slate-800 mt-24 relative z-10">
+    <div class="max-w-xl mx-auto space-y-4">
+      <p class="font-anime text-xl sm:text-2xl text-pink-400">
+        Happy Birthday, Indhu! 🌸
+      </p>
+      <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+        "Enjoy your special day to the fullest. Keep shining, smiling, and being the genuine gem that you are."
+      </p>
+      <div class="flex items-center justify-center gap-2 text-xs text-slate-500 pt-4">
+        <span>Crafted with love & admiration</span>
+        <span>•</span>
+        <span>Chapter 21 • 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
